@@ -1,8 +1,10 @@
 // src/main/java/com/Evo/mainpage/model/Product.java
 package com.Evo.mainpage.model;
 
+import lombok.Data;
 import lombok.Getter;
 import lombok.Setter;
+
 
 @Getter
 @Setter
@@ -17,5 +19,6 @@ public class Product {
         this.price = price;
         this.name = name;
     }
+
 
 }
