@@ -34,7 +34,7 @@ public class MainpageController {
     @GetMapping("/showProduct")
     public String showProduct() {
         // Product URL
-        String productUrl = "http://localhost:8091/products";
+        String productUrl = "http://localhost:8092/products";
         try {
             // RestTemplate을 사용하여 Product에 GET 요청을 보내고, 응답을 Product 객체로 전달받음.
             Product product = restTemplate.getForObject(productUrl, Product.class);
