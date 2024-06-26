@@ -13,6 +13,7 @@ public class Product {
     private String name;
     private double price;
 
+
     /**
      * 생성자로 제품의 이름과 가격을 초기화.
      */

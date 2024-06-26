@@ -1,31 +1,21 @@
 // src/main/java/com/Evo/mainpage/model/Product.java
 package com.Evo.mainpage.model;
 
+import lombok.Getter;
+import lombok.Setter;
+
+@Getter
+@Setter
 public class Product {
-    private Long id;
+    private double price;
     private String name;
 
-    // Constructors, getters, setters
+    // 생성자
     public Product() {}
 
-    public Product(Long id, String name) {
-        this.id = id;
+    public Product(double price, String name) {
+        this.price = price;
         this.name = name;
     }
 
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
 }

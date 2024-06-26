@@ -17,6 +17,6 @@ public class ProductController {
      */
     @GetMapping("/products")
     public Product getProductDetails() {
-        return new Product("람보르기니", 34567890);
+        return new Product("람보르기니", 345678);
     }
 }
