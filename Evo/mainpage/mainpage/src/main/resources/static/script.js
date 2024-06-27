@@ -1,4 +1,5 @@
 document.addEventListener('DOMContentLoaded', function() {
+
     const menuItems = document.querySelectorAll('.menu-item');
     const menu = document.getElementById('menu');
 
