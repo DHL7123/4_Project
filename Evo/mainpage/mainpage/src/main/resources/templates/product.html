@@ -3,12 +3,33 @@
 <head>
     <meta charset="UTF-8">
     <title>Product Details</title>
+    <script>
+        function submitForm(button) {
+            const form = document.getElementById('purchaseForm');
+            form.productName.value = button.getAttribute('data-name');
+            form.productPrice.value = button.getAttribute('data-price');
+            form.submit();
+        }
+
+    </script>
 </head>
 <body>
-<h1>상품명: <span th:text="${product.name}"></span></h1>
-<p>가격: <span th:text="${product.price}"></span></p>
-<form action="/purchase" method="post">
-    <button type="submit">상품 구매하기</button>
+<h1>Product Information</h1>
+<div>
+    <ul>
+        <li th:each="entry : ${products.entrySet()}">
+            Name: <span th:text="${entry.key}"></span>,
+            Price: <span th:text="${entry.value}"></span>
+            <button type="button"
+                    th:data-name="${entry.key}"
+                    th:data-price="${entry.value}"
+                    onclick="submitForm(this)">Purchase</button>
+        </li>
+    </ul>
+</div>
+<form id="purchaseForm" action="/purchase" method="post" style="display:none;">
+    <input type="hidden" name="productName" />
+    <input type="hidden" name="productPrice" />
 </form>
 </body>
 </html>

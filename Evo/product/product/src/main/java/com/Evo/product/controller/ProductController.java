@@ -6,6 +6,9 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+
+import java.util.HashMap;
+import java.util.Map;
 /**
  * ProductController 컨트롤러는 /products 엔드포인트에 대한 HTTP GET 요청을 처리.
  * 이 컨트롤러는 제품에 대한 정보를 제공.
@@ -17,9 +20,12 @@ public class ProductController {
      * 제품의 세부 정보를 반환.
      */
     @GetMapping("/products")
-    public Product getProductDetails() {
-        Product product = new Product("람보르기니", 34568);
-        logger.info("상품에 대한 요청: {}", product.getName());
-        return product;
+    public Map<String,Integer> getProductDetails() {
+        Map<String,Integer> products = new HashMap<>();
+        products.put("람보르기니", 34568);
+        products.put("페라리", 56789);
+        products.put("포르쉐", 45678);
+        logger.info("상품에 대한 요청: {}", products.keySet());
+        return products;
     }
 }

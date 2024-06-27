@@ -13,7 +13,7 @@ public class OrderController {
     @PostMapping("/order")
     public String createOrder(@RequestBody Product product) {
         // 여기서 주문 처리를 수행합니다.
-        logger.info("상품에 대한 주문이 접수: {}", product);
+        logger.info("상품에 대한 주문이 접수: {}", product.getName());
         return "결제가 완료되었습니다";
     }
 }

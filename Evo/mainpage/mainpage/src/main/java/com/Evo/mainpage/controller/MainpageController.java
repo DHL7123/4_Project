@@ -11,6 +11,8 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.client.RestTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 
+
+import java.util.Map;
 /**
  * MainpageController 컨트롤러는 /showProduct에 대한 GET 요청을 처리.
  */
@@ -42,9 +44,10 @@ public class MainpageController {
         String productUrl = "http://localhost:8092/products";
         try {
             // RestTemplate을 사용하여 Product에 GET 요청을 보내고, 응답을 Product 객체로 전달받음.
-            Product product = restTemplate.getForObject(productUrl, Product.class);
-            model.addAttribute("product", product);
-            logger.info("상품 정보를 가져왔습니다: {}", product);
+            Map<String, Integer> products = restTemplate.getForObject(productUrl, Map.class);
+            model.addAttribute("products", products);
+            model.addAttribute("successMessage", "상품 정보를 가져왔습니다!");
+            logger.info("상품 정보를 가져왔습니다: {}", products);
             return "product";
         } catch (Exception e) {
             // 예외 처리. 위 url 에서 로컬호스트 포트를 잘못 설정하면 예외가 발생함.
@@ -54,14 +57,16 @@ public class MainpageController {
         }
     }
     @PostMapping("/purchase")
-    public String purchase(Model model) {
+    public String purchase(String productName, Model model) {
         // Product 정보를 가져오는 URL
         String productUrl = "http://localhost:8092/products";
         // 주문 요청을 보낼 URL
         String orderUrl = "http://localhost:8093/order";
         try {
-            // Product 서비스에서 Product 객체를 가져옴
-            Product product = restTemplate.getForObject(productUrl, Product.class);
+            // product 객체 가져오기
+            Map<String, Integer> products = restTemplate.getForObject(productUrl, Map.class);
+            Integer productPrice = products.get(productName);
+            Product product = new Product(productName, productPrice);
             // 가져온 Product 객체를 사용하여 주문 요청을 보냄
             String response = restTemplate.postForObject(orderUrl, product, String.class);
             model.addAttribute("message", response);
