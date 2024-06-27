@@ -5,8 +5,10 @@
     <title>Product Details</title>
 </head>
 <body>
-        <h1>상품명: <span th:text="${product.name}"></span></h1>
-        <p>가격: <span th:text="${product.price}"></span></p>
-        <a href="/showProduct">상품 구매하기</a>
+<h1>상품명: <span th:text="${product.name}"></span></h1>
+<p>가격: <span th:text="${product.price}"></span></p>
+<form action="/purchase" method="post">
+    <button type="submit">상품 구매하기</button>
+</form>
 </body>
 </html>

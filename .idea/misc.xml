@@ -3,6 +3,7 @@
   <component name="ExternalStorageConfigurationManager" enabled="true" />
   <component name="FrameworkDetectionExcludesConfiguration">
     <file type="web" url="file://$PROJECT_DIR$/Evo/mainpage/mainpage" />
+    <file type="web" url="file://$PROJECT_DIR$/Evo/order/order" />
     <file type="web" url="file://$PROJECT_DIR$/Evo/product/product" />
   </component>
   <component name="ProjectRootManager" version="2" languageLevel="JDK_22" project-jdk-name="17" project-jdk-type="JavaSDK">

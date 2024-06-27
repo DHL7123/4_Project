@@ -3,6 +3,9 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/4_project.iml" filepath="$PROJECT_DIR$/.idea/4_project.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/com.Evo.mainpage.main.iml" filepath="$PROJECT_DIR$/.idea/modules/com.Evo.mainpage.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/com.Evo.order.main.iml" filepath="$PROJECT_DIR$/.idea/modules/com.Evo.order.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/com.Evo.product.main.iml" filepath="$PROJECT_DIR$/.idea/modules/com.Evo.product.main.iml" />
     </modules>
   </component>
 </project>

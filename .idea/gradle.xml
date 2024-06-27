@@ -13,6 +13,14 @@
         </option>
       </GradleProjectSettings>
       <GradleProjectSettings>
+        <option name="externalProjectPath" value="$PROJECT_DIR$/Evo/order/order" />
+        <option name="modules">
+          <set>
+            <option value="$PROJECT_DIR$/Evo/order/order" />
+          </set>
+        </option>
+      </GradleProjectSettings>
+      <GradleProjectSettings>
         <option name="externalProjectPath" value="$PROJECT_DIR$/Evo/product/product" />
         <option name="modules">
           <set>
