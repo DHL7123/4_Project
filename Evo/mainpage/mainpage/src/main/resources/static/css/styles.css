@@ -1,10 +1,51 @@
 body {
     font-family: Arial, sans-serif;
+    text-align: center;
+}
+.header {
+    display: inline-block;
+    top: 0;
+    height: 100%;
+    left: 0;
+    width: 100%;
+}
+.header li{
+    display: inline-block;
+}
+#logo {
+    display: inline-block;
+    position: relative;
+    text-align: left;
+    vertical-align: middle;
 }
 
-#logo {
-    text-align: left;
-    margin: 20px 0;
+#middleMenu {
+    display: inline-block;
+    margin: auto;
+    text-align: center;
+    vertical-align: middle;
+}
+
+#middleMenu li{
+    list-style: none;
+    display: inline-block;
+    text-align: center;
+    vertical-align: middle;
+}
+
+#rightMenu {
+    display: inline-block;
+    position: relative;
+    text-align: right;
+    vertical-align: middle;
+}
+
+#rightMenu li{
+    list-style: none;
+    display: inline-block;
+    margin-right: 20px;
+    text-align: right;
+    vertical-align: middle;
 }
 
 .box {
